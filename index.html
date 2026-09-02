@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+   <meta name="description" content="Warehouse — интерактивное планирование склада в 3D. Перетаскивайте объекты, собирайте стопки и контролируйте каждый сантиметр." />
+   <title>Warehouse — планирование склада</title>
+   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+   <script>
+      // Анти-FOUC: тема ставится ДО первой краски.
+      // По умолчанию — системная; ручной выбор хранится в 'wh-theme'.
+      ; (function () {
+         try {
+            var saved = localStorage.getItem('wh-theme')
+            var dark = saved
+               ? saved === 'dark'
+               : matchMedia('(prefers-color-scheme: dark)').matches
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+            // Фон страницы сразу в цвет темы — нет белой вспышки до загрузки CSS.
+            document.documentElement.style.backgroundColor = dark
+               ? '#0a0a0f'
+               : '#f6f7f9'
+         } catch (e) {
+            document.documentElement.dataset.theme = 'dark'
+         }
+      })()
+   </script>
+   <script type="module" src="./assets/index-BAZl3gea.js"></script>
+   <link rel="stylesheet" href="./assets/index-C0vLqQNw.css">
+</head>
+
+<body>
+   <div id="root"></div>
+</body>
+
+</html>
