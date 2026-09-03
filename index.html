@@ -11,6 +11,8 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
    <script>
+      // Анти-FOUC: тема ставится ДО первой краски.
+      // По умолчанию — системная; ручной выбор хранится в 'wh-theme'.
       ; (function () {
          try {
             var saved = localStorage.getItem('wh-theme')
@@ -18,6 +20,7 @@
                ? saved === 'dark'
                : matchMedia('(prefers-color-scheme: dark)').matches
             document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+            // Фон страницы сразу в цвет темы — нет белой вспышки до загрузки CSS.
             document.documentElement.style.backgroundColor = dark
                ? '#0a0a0f'
                : '#f6f7f9'
@@ -26,8 +29,8 @@
          }
       })()
    </script>
-   <script type="module" src="./assets/index-BO6c61hW.js"></script>
-   <link rel="stylesheet" href="./assets/index-COqY3olc.css">
+   <script type="module" src="./assets/index-D8JGhSfI.js"></script>
+   <link rel="stylesheet" href="./assets/index-BAv6J5ZH.css">
 </head>
 
 <body>
